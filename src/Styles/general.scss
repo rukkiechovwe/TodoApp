@@ -1,0 +1,40 @@
+// general styling
+.color-web{
+   background-color: $primaryColor;
+   color: $primaryWhite;
+}
+.color-gen{
+   background-color: $primaryWhite;
+   color: $primaryBlack;
+}
+.row{
+   display: flex;
+   flex-direction: row;
+}
+.col{
+   display: flex;
+   flex-direction: column;
+}
+.al-jus-cen{
+   align-items: center;
+   justify-content: center;
+}
+.al-cen-between{
+   align-items: center;
+   justify-content: space-between;   
+}
+.fw{
+   width: 100%;
+}
+input{
+   background-color: transparent;
+   color: $primaryWhite;
+   border: none;
+   font-family: inherit;
+   font-size: inherit;
+   outline: none;
+}
+button{
+   @extend input;
+   color: inherit;
+}

@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState,useEffect } from 'react'
+import "./App.scss";
+import AddTodo from "./Components/AddTodo";
+import Nav from "./Components/nav";
 
+export const AppContext = React.createContext() 
 function App() {
+  const [tasks, setTasks] = useState([])
+   const addItem = (item)=>{
+      const newTask = [...tasks,item]
+      setTasks(newTask)
+      window.localStorage.setItem('tasks',JSON.stringify(newTask))  
+   }
+   // retrieve from local storage
+   useEffect(() => {
+      const data = JSON.parse(window.localStorage.getItem('tasks'))
+      if (data){
+         setTasks([...tasks,...data])
+      }
+   }, [])
+   //window.localStorage.clear()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{ tasks:tasks, addItem:addItem }}
+    >
+      <div className="color-gen App">
+        <Nav />
+        <AddTodo />
+      </div>
+    </AppContext.Provider>
   );
 }
 

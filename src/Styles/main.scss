@@ -1,0 +1,17 @@
+// individual styling
+.App{
+   nav{
+      padding: 10px;
+      display: flex;
+      svg{
+         margin: 0 6px;
+      }
+      .input-div{
+         width: 50%;
+      }
+   }
+}
+.add-todo{
+   border: 1px solid $primaryBlack;
+   color: $primaryBlack;
+}
