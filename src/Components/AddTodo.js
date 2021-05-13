@@ -1,15 +1,17 @@
-import React from 'react'
-import TodoForm from './TodoForm';
-import TodoList from './TodoList';
+import React, { useState } from "react";
+import Fab from "./fab";
+import TodoForm from "./TodoForm";
+import TodoList from "./TodoList";
 
 function AddTodo() {
-    
-   return (
-      <div className='col al-jus-cen'>
-         <TodoForm />
-         <TodoList />
-      </div>
-   )
+  const [showForm, setShowForm] = useState(false);
+  return (
+    <div className="col al-jus-cen">
+      {showForm &&  <TodoForm />}
+      <Fab onClick={() => setShowForm(!showForm)} />
+      <TodoList />
+    </div>
+  );
 }
 
-export default AddTodo
+export default AddTodo;

@@ -18,9 +18,15 @@ form{
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  .add-todo {
-    border-bottom: 1px solid $primaryBlack;
-    color: $primaryBlack;
+  width: 50%;
+  .input-group{
+    input{
+       background-color: rgba(227, 227, 227, 0.37);
+       color: $primaryBlack;
+       padding: 10px;
+       border-radius: 10px;
+    }
+    padding: 10px 0;
   }
   button{
     background-color: blueviolet;
