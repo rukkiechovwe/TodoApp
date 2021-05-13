@@ -1,13 +1,26 @@
+@font-face{
+   src: url('../assets/Inter-Medium.ttf');
+   font-family: 'Inter-Medium'
+   // src: url('../assets/FacitRegular/FacitRegular.otf');
+   // font-family: 'FacitRegular'
+ }
+body{
+   font: {
+      family:"Inter-Medium";
+      // family: 'FacitRegular'
+   }
+}
 .text{
    font: {
-      family:Helvetica, sans-serif;
       size:1.2rem;
       weight:bold;
    }
 }
 .text-info{
+   font-size: 0.8rem;
+}
+.title{
    font: {
-      family:Helvetica, sans-serif;
-      size:.8rem;
+      size:1.2rem;
    }
 }

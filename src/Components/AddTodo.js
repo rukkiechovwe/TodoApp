@@ -5,7 +5,7 @@ import TodoList from './TodoList';
 function AddTodo() {
     
    return (
-      <div>
+      <div className='col al-jus-cen'>
          <TodoForm />
          <TodoList />
       </div>

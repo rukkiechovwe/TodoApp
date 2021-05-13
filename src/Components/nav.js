@@ -1,14 +1,15 @@
 import React from "react";
+import Search from "./search";
 
 function Nav() {
   return (
-    <nav className="color-web al-cen-between">
+    <nav className="color-web al-cen-between row">
       <div className='text'>Today</div>
 
-      <div className='al-jus-cen row input-div'>
+      <div className=' row input-div'>
          <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 i-size"
+            className="i-size"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -20,14 +21,14 @@ function Nav() {
                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
          </svg>
-         <input placeholder='search tasks'/>
+         <Search/>
       </div>
 
       <div>
          {/* add icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 i-size"
+          className="i-size"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -37,38 +38,6 @@ function Nav() {
             strokeLinejoin="round"
             strokeWidth={2}
             d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-          />
-        </svg>
-
-          {/* task icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 i-size"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
-          />
-        </svg>
-
-          {/* adjustment icon */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 i-size"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"
           />
         </svg>
 

@@ -1,17 +1,82 @@
 // individual styling
-.App{
-   nav{
-      padding: 10px;
-      display: flex;
-      svg{
-         margin: 0 6px;
-      }
-      .input-div{
-         width: 50%;
-      }
-   }
+nav {
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    svg {
+      margin: 0 6px;
+    }
+    .input-div {
+      width: 52%;
+      align-items: center;
+    }
 }
-.add-todo{
-   border: 1px solid $primaryBlack;
-   color: $primaryBlack;
+
+form{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  .add-todo {
+    border-bottom: 1px solid $primaryBlack;
+    color: $primaryBlack;
+  }
+  button{
+    background-color: blueviolet;
+    padding: 2px;
+    width: 30px;
+    height: 30px;
+    color: $primaryWhite;
+    border-radius: 50%;
+  }
+}
+
+ul {
+   width: 50%;
+  li {
+    padding: 10px;
+    margin: 10px;
+   border-radius: 10px;
+    .list-item {
+      position: relative;
+      padding-left: 12px;
+
+      .reminder{
+        background-color: #892be21e;
+        color: blueviolet;
+        padding: 3px 10px;
+        border-radius: 10px;
+        margin-top: 5px;
+      }
+    }
+    .list-item::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background-color: blueviolet;
+      border-radius: 15px;
+      display: block;
+    }
+  }
+  svg {
+   margin-right:6px;
+ }
+}
+
+.fab{
+  background-color: $primaryColor;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: $primaryWhite;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  svg{
+    width: 32px;
+  }
 }
