@@ -1,7 +1,7 @@
 import React, { useState,useContext } from "react";
 import { AppContext } from "../App";
 import Fab from "./fab";
-import TodoForm from "./todoForm";
+import TodoForm from "./todoForm"
 import TodoList from "./todoList";
 
 function AddTodo() {
@@ -10,7 +10,6 @@ function AddTodo() {
   return (
     <div className="col al-jus-cen">
       
-
       {/* toggle add task form */}
       {showForm &&  <TodoForm />}
       <Fab onClick={() => setShowForm(!showForm)} />
