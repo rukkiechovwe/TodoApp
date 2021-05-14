@@ -4,15 +4,13 @@ import Fab from "./fab";
 import TodoForm from "./todoForm"
 import TodoList from "./todoList";
 
-// you there?yessssss longestttttt timeeeeeeeeeee
-// fishhh, there's no lifht here,lol continue
-// lemme rename it back abeg, no stress
-
+export const ShowFormContext = React.createContext()
 function AddTodo() {
   const context = useContext(AppContext);
   const [showForm, setShowForm] = useState(false);
   return (
-    <div className="col al-jus-cen">
+   <ShowFormContext.Provider value={{showForm:showForm,setShowForm:setShowForm}}>
+      <div className="col al-jus-cen">
       
       {/* toggle add task form */}
       {showForm &&  <TodoForm />}
@@ -26,8 +24,9 @@ function AddTodo() {
         }
 
       {/* tasks list */}
-      <TodoList />
+      <TodoList/>
     </div>
+   </ShowFormContext.Provider>
   );
 }
 

@@ -20,11 +20,23 @@ function App() {
     setTasks(newTasks);
     window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
+  
+  const editItem = (id) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.completed = true;
+        // add edit function here
+      }
+      return task;
+    });
+    setTasks(newTasks);
+    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
+  };
 
   const completedItem = (id) => {
     const newTasks = tasks.map((task) => {
       if (task.id === id) {
-        task.completed = true;
+        task.completed = !task.completed;
       }
       return task;
     });
@@ -46,7 +58,7 @@ function App() {
   const priority = (id) => {
     const newTasks = tasks.map((task) => {
       if (task.id === id) {
-        task.priority = true;
+        task.priority = !task.priority;
       }
       return task;
     });

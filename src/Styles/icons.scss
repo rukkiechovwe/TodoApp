@@ -1,8 +1,15 @@
+.i-size,.img-size,.close-btn{
+   cursor: pointer;
+}
 .i-size{
    width: 19px;
-   cursor: pointer;
 }
 .img-size{
    width: 15px;
-   cursor: pointer;
+}
+.close-btn{
+   width: 30px;
+   position: absolute;
+   top: 5px;
+   right: 5px;
 }

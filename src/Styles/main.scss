@@ -53,6 +53,17 @@ ul {
       border-radius: 15px;
       display: block;
     }
+
+    // if priority set
+    .priority{
+      .reminder{
+        background-color: #ff606063;
+        color: #ff6060;
+      }
+    }
+    .priority::after{
+      background-color: #ff6060;
+    }
   }
   svg {
    margin-right:6px;
@@ -95,6 +106,7 @@ ul {
 //            add tasks form ui
 //=============================
 form{
+  position: relative;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
