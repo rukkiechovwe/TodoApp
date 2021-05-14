@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { AppContext, SearchContext } from "../App";
-import edit from "../assets/img/edit.png";
-import flag from "../assets/img/flag.png";
-import alarm from "../assets/img/alarm.png";
+import editIcon from "../assets/img/editIcon.png";
+import flagIcon from "../assets/img/flagIcon.png";
+import alarmIcon from "../assets/img/alarmIcon.png";
+import deleteIcon from "../assets/img/deleteIcon.png";
 
 function TodoList() {
   const context = useContext(AppContext);
@@ -20,7 +21,6 @@ function TodoList() {
                 <div className="row al-cen-between fw">
                   <span
                     className="title"
-                    // try it.............workinggggggggggg!!!!!! lalalalalalalalallalalalalalalalalalalal, lol thnaksssss
                     style={{
                       textDecoration: item.completed && "line-through",
                     }}
@@ -51,34 +51,26 @@ function TodoList() {
                     onClick={() => context.hasReminder(item.id)}
                     className="img-size"
                   >
-                    <img src={alarm} alt="alarm" />
+                    <img src={alarmIcon} alt="alarm" />
                   </button>
                   {/* priority */}
                   <button
                     onClick={() => context.priority(item.id)}
                     className="img-size"
                   >
-                    <img src={flag} alt="flag" />
+                    <img src={flagIcon} alt="flag" />
                   </button>
                   {/* edit */}
                   <button className="img-size">
-                    <img src={edit} alt="edit" />
+                    <img src={editIcon} alt="edit" />
                   </button>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="i-size"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  {/* delete */}
+                  <button
                     onClick={() => context.deleteItem(item.id)}
+                    className="img-size"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
+                    <img src={deleteIcon} alt="deleteIcon" />
+                  </button>
                 </div>
               </div>
             </li>

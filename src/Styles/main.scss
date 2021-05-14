@@ -21,8 +21,9 @@ ul {
    width: 100%;
   li {
     padding:6px 8px;
-    margin: 10px;
+    margin: 15px 10px;
     border-radius: 10px;
+    box-shadow: 0px 0px 7px 1px #c6c6c659;
     .list-item {
       position: relative;
       padding-left: 12px;
@@ -57,7 +58,7 @@ ul {
     // if priority set
     .priority{
       .reminder{
-        background-color: #ff606063;
+        background-color: #ff606041;
         color: #ff6060;
       }
     }
