@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
-import AddTodo from "./Components/AddTodo";
+import AddTodo from "./Components/todoBody";
 import Nav from "./Components/nav";
 
 export const AppContext = React.createContext();
@@ -8,13 +8,48 @@ export const SearchContext = React.createContext();
 function App() {
   const [tasks, setTasks] = useState([]);
   const [result, setResult] = useState([]);
+
   const addItem = (item) => {
     const newTask = [...tasks, item];
     setTasks(newTask);
     window.localStorage.setItem("tasks", JSON.stringify(newTask));
   };
+
   const deleteItem = (id) => {
     const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
+  };
+
+  const completedItem = (id) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.completed = true;
+      }
+      return task;
+    });
+    setTasks(newTasks);
+    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
+  };
+
+  const hasReminder = (id) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.hasReminder = true;
+      }
+      return task;
+    });
+    setTasks(newTasks);
+    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
+  };
+
+  const priority = (id) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        task.priority = true;
+      }
+      return task;
+    });
     setTasks(newTasks);
     window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
@@ -27,7 +62,14 @@ function App() {
   }, []);
   return (
     <AppContext.Provider
-      value={{ tasks: tasks, addItem: addItem, deleteItem: deleteItem }}
+      value={{
+        tasks: tasks,
+        addItem: addItem,
+        deleteItem: deleteItem,
+        completedItem: completedItem,
+        hasReminder:hasReminder,
+        priority:priority,
+      }}
     >
       <SearchContext.Provider value={{ result: result, setResult: setResult }}>
         <Nav />

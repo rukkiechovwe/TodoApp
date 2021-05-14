@@ -1,12 +1,12 @@
 // individual styling
 nav {
-    padding: 10px;
+    padding: 13px;
     position: sticky;
     top: 0;
     right: 0;
     left: 0;
     svg {
-      margin: 0 6px;
+      margin: 0 10px;
     }
     .input-div {
       width: 52%;
@@ -14,46 +14,32 @@ nav {
     }
 }
 
-form{
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 50%;
-  .input-group{
-    input{
-       background-color: rgba(227, 227, 227, 0.37);
-       color: $primaryBlack;
-       padding: 10px;
-       border-radius: 10px;
-    }
-    padding: 10px 0;
-  }
-  button{
-    background-color: blueviolet;
-    padding: 2px;
-    width: 30px;
-    height: 30px;
-    color: $primaryWhite;
-    border-radius: 50%;
-  }
-}
-
+//=============================
+//                     tasks ui
+//=============================
 ul {
-   width: 50%;
+   width: 100%;
   li {
-    padding: 10px;
+    padding:6px 8px;
     margin: 10px;
-   border-radius: 10px;
+    border-radius: 10px;
     .list-item {
       position: relative;
       padding-left: 12px;
+      width: auto;
 
+      div{
+        padding: 6px 0;
+      }
       .reminder{
         background-color: #892be21e;
         color: blueviolet;
         padding: 3px 10px;
         border-radius: 10px;
         margin-top: 5px;
+      }
+      .list-icon{
+        border-top: 1px solid #eee;
       }
     }
     .list-item::after{
@@ -73,6 +59,9 @@ ul {
  }
 }
 
+//=============================
+//               show modal btn
+//=============================
 .fab{
   background-color: $primaryColor;
   width: 55px;
@@ -80,9 +69,63 @@ ul {
   border-radius: 50%;
   color: $primaryWhite;
   position: fixed;
-  bottom: 20px;
+  bottom: 30px;
   right: 20px;
+  z-index: 9999;
   svg{
     width: 32px;
   }
+}
+
+//=============================
+//                    modal btn
+//=============================
+.modal{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  // visibility: hidden;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.404);
+}
+
+//=============================
+//            add tasks form ui
+//=============================
+form{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  margin-top: 20px;
+  .input-group{
+    padding: 10px 0;
+    input{
+       background-color: rgba(227, 227, 227, 0.37);
+       color: $primaryBlack;
+       padding: 10px;
+       border-radius: 6px;
+    }
+  }
+  button{
+    background-color: blueviolet;
+    padding: 10px;
+    color: $primaryWhite;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
+}
+
+
+//==============================
+//                responsiveness
+//==============================
+@media (min-width:768px){
+  ul,form{width: 50%;}
+}
+@media (min-width:1024px){
+  ul,form{width: 40%;}
 }

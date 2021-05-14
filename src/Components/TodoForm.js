@@ -28,34 +28,33 @@ function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="row al-jus-cen">
-     <div className="col fw">
-      <div className="row input-group">
-        <input
-            type="text"
-            placeholder="add task"
-            onChange={(e) => setTask({ ...task, title: e.target.value })}
-            value={task.title}
-          />
-      </div>
-        <div className="row input-group al-jus-cen">
-          <label>Reminder:</label>
-          <input
-            type="date"
-            onChange={(e) => setTask({ ...task, reminder: e.target.value })}
-            value={task.reminder}
-          />
-        </div>
+    <div className="modal row al-jus-cen fh fw">
+      <form onSubmit={handleSubmit} className="col al-jus-cen text">
+        <p className="big-text">Add Task</p>
+        <div className="col fw">
+          <div className="row input-group">
+            <input
+                type="text"
+                placeholder="add task"
+                onChange={(e) => setTask({ ...task, title: e.target.value })}
+                value={task.title}
+              />
+          </div>
+            <div className="row input-group al-jus-cen">
+              <input
+                type="date"
+                onChange={(e) => setTask({ ...task, reminder: e.target.value })}
+                value={task.reminder}
+              />
+            </div>
 
 
-        <button className="row al-jus-cen">
-        <svg xmlns="http://www.w3.org/2000/svg" className="i-size" fill="none" viewBox="0 0 24 24" stroke="currentColor" >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={5} d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-        </svg>
-      </button>
-     </div>
-      
-    </form>
+            <button className="row al-jus-cen">
+            Add Task
+          </button>
+        </div> 
+      </form>
+    </div>
   );
 }
 

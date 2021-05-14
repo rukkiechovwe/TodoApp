@@ -8,17 +8,16 @@ function Search() {
 
   useEffect(() => {
     const res = appContext.tasks.filter((item) =>
-      item.toLowerCase().includes(search.toLowerCase())
+      item.title.toLowerCase().includes(search.toLowerCase())
     );
     searchContext.setResult(res);
   }, [search]);
   return (
-    <div>
       <input
+        className="fw"
         placeholder="search tasks"
         onChange={(e) => setSearch(e.target.value)}
       />
-    </div>
   );
 }
 

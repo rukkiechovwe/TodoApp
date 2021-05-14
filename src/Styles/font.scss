@@ -1,26 +1,32 @@
 @font-face{
+   src: url('../assets/FacitRegular/FacitRegular.otf');
+   font-family: 'FacitRegular'
+ }
+ @font-face{
    src: url('../assets/Inter-Medium.ttf');
-   font-family: 'Inter-Medium'
-   // src: url('../assets/FacitRegular/FacitRegular.otf');
-   // font-family: 'FacitRegular'
+   font-family: 'Inter-Medium' 
  }
 body{
    font: {
-      family:"Inter-Medium";
-      // family: 'FacitRegular'
+      // family:"Inter-Medium";
+      family: 'Inter-Medium';
    }
 }
 .text{
-   font: {
-      size:1.2rem;
-      weight:bold;
-   }
+   font-size: 0.9em;
 }
 .text-info{
-   font-size: 0.8rem;
+   font: {
+      size: 0.8rem;
+      family: 'FacitRegular'
+   }
 }
 .title{
+   font-size:1.1rem;
+}
+.big-text{
    font: {
-      size:1.2rem;
+      size:1.3rem;
+      weight: 500;
    }
 }

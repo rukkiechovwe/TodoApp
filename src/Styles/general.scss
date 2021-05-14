@@ -40,6 +40,9 @@ li{
 .fw{
    width: 100%;
 }
+.fh{
+   height: 100vh;
+}
 input{
    background-color: transparent;
    color: $primaryWhite;
@@ -52,4 +55,8 @@ input{
 button{
    @extend input;
    color: inherit;
+   cursor: pointer;
+}
+img{
+   width: 100%;
 }
