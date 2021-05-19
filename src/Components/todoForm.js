@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AppContext } from "../App";
-import { ShowFormContext } from "./todoBody";
+import { ShowFormContext } from "../context/modalContext";
 
 function TodoForm() {
   const context = useContext(AppContext);
@@ -12,6 +12,9 @@ function TodoForm() {
     hasReminder: false,
     reminder: "",
   });
+  useEffect(() => {
+    setTask()
+  })
   // {title,completed,priority,hasReminder,id, reminder}
   const handleSubmit = (e) => {
     e.preventDefault();

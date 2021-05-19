@@ -1,22 +1,34 @@
 import React, { useContext } from "react";
 import { AppContext, SearchContext } from "../App";
+import { DragDropContext ,Droppable,Draggable  } from 'react-beautiful-dnd';
 import editIcon from "../assets/img/editIcon.png";
 import flagIcon from "../assets/img/flagIcon.png";
 import alarmIcon from "../assets/img/alarmIcon.png";
 import deleteIcon from "../assets/img/deleteIcon.png";
+import { ShowFormContext } from "../context/modalContext";
 
 function TodoList() {
   const context = useContext(AppContext);
   const searchContext = useContext(SearchContext);
+  const formContext = useContext(ShowFormContext);
   return (
-    <ul>
-      {/* display all tasks if search result = 0 */}
-      {searchContext.result.length === 0
-        ? context.tasks &&
-          context.tasks.map((item, i) => (
-            <li key={item.id} className="color-list">
+    <DragDropContext>
+      <Droppable droppableId="characters">
+      {(provided) => (
+      <ul {...provided.droppableProps} ref={provided.innerRef}>
+      {searchContext.result.length === 0 ? 
+      context.tasks && context.tasks.map((item,index) => (
+        <Draggable key={item.id} draggableId={item.title} index={index}>
+          {(provided) => (
+              <li className="color-list"
+              ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}
+              >
               <div
-                className={`${item.priority === true ?  `priority col al-start list-item`: `list-item col al-start`}`}
+                className={`${
+                  item.priority === true
+                    ? `priority col al-start list-item`
+                    : `list-item col al-start`
+                }`}
               >
                 <div className="row al-cen-between fw">
                   <span
@@ -61,7 +73,13 @@ function TodoList() {
                     <img src={flagIcon} alt="flag" />
                   </button>
                   {/* edit */}
-                  <button className="img-size">
+                  <button
+                    className="img-size"
+                    // onClick={() => {
+                    //   formContext.setShowForm(true);
+                    //   formContext.setFormType("edit")
+                    // }}
+                  >
                     <img src={editIcon} alt="edit" />
                   </button>
                   {/* delete */}
@@ -74,8 +92,9 @@ function TodoList() {
                 </div>
               </div>
             </li>
-          ))
-        : searchContext.result.map((item, i) => (
+          )}
+        </Draggable>
+          )): searchContext.result.map((item, i) => (
             <li key={`${item}.${i}`} className="color-list">
               <div className="list-item col al-start">
                 <div className="row al-cen-between fw">
@@ -125,7 +144,10 @@ function TodoList() {
               </div>
             </li>
           ))}
-    </ul>
+      </ul>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 }
 

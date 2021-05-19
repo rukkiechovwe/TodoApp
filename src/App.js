@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import AddTodo from "./Components/todoBody";
 import Nav from "./Components/nav";
+import ShowFormContextProvider from "./context/modalContext";
 
 export const AppContext = React.createContext();
 export const SearchContext = React.createContext();
 function App() {
   const [tasks, setTasks] = useState([]);
   const [result, setResult] = useState([]);
+
+  // const pluckTask = 
 
   const addItem = (item) => {
     const newTask = [...tasks, item];
@@ -20,18 +23,17 @@ function App() {
     setTasks(newTasks);
     window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
-  
-  const editItem = (id) => {
-    const newTasks = tasks.map((task) => {
-      if (task.id === id) {
-        task.completed = true;
-        // add edit function here
-      }
-      return task;
-    });
-    setTasks(newTasks);
-    window.localStorage.setItem("tasks", JSON.stringify(newTasks));
-  };
+
+  // const editItem = (item) => {
+  //   const newTasks = tasks.map((task) => {
+  //     if (task.id === item.id) {
+  //       return { ...task, ...item };
+  //     }
+  //     return task;
+  //   });
+  //   setTasks(newTasks);
+  //   window.localStorage.setItem("tasks", JSON.stringify(newTasks));
+  // };
 
   const completedItem = (id) => {
     const newTasks = tasks.map((task) => {
@@ -79,13 +81,16 @@ function App() {
         addItem: addItem,
         deleteItem: deleteItem,
         completedItem: completedItem,
-        hasReminder:hasReminder,
-        priority:priority,
+        // editItem: editItem,
+        hasReminder: hasReminder,
+        priority: priority,
       }}
     >
       <SearchContext.Provider value={{ result: result, setResult: setResult }}>
-        <Nav />
-        <AddTodo />
+        <ShowFormContextProvider>
+          <Nav />
+          <AddTodo />
+        </ShowFormContextProvider>
       </SearchContext.Provider>
     </AppContext.Provider>
   );
