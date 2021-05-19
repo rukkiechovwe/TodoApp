@@ -15,7 +15,6 @@ function TodoForm() {
   useEffect(() => {
     setTask()
   })
-  // {title,completed,priority,hasReminder,id, reminder}
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.title !== "") {
@@ -61,7 +60,7 @@ function TodoForm() {
                   type="text"
                   placeholder="add task"
                   onChange={(e) => setTask({ ...task, title: e.target.value })}
-                  value={task.title}
+                  // value={task.title}
                 />
               </div>
               <div className="row input-group al-jus-cen">
@@ -70,7 +69,7 @@ function TodoForm() {
                   onChange={(e) =>
                     setTask({ ...task, reminder: e.target.value })
                   }
-                  value={task.reminder}
+                  // value={task.reminder}
                 />
               </div>
 
