@@ -1,4 +1,4 @@
-.i-size,.img-size,.close-btn{
+.i-size,.img-size,.close-btn,.list-icon > div{
    cursor: pointer;
 }
 .i-size{
@@ -6,6 +6,7 @@
 }
 .img-size{
    width: 15px;
+   margin-right: 10px;
 }
 .close-btn{
    width: 30px;

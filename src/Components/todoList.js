@@ -1,33 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
-import editIcon from "../assets/img/editIcon.png";
-import flagIcon from "../assets/img/flagIcon.png";
-import alarmIcon from "../assets/img/alarmIcon.png";
-import deleteIcon from "../assets/img/deleteIcon.png";
+import MenuItemPopup from "./menuItemPopup";
 
-function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
+function TodoList({ item, completedItem, deleteItem, priority, hasReminder }) {
   const context = useContext(AppContext);
+  const [iconPopup, setIconPopup] = useState(false);
   return (
-      <div
-        className={`${
-          item.priority === true
-            ? `priority col al-start list-item`
-            : `list-item col al-start`
-        }`}
-      >
-        <div className="row al-cen-between fw">
-          <span
-            className="title"
-            style={{
-              textDecoration: item.completed && "line-through",
-            }}
-          >
-            {item.title}
-          </span>
-          <span className="reminder text-info">{item.reminder}</span>
-        </div>
-
-        <div className="list-icon row al-cen-between fw">
+    <div
+      className={`${
+        item.priority === true
+          ? `priority col al-start list-item`
+          : `list-item col al-start`
+      }`}
+    >
+      <div className="row al-cen-between fw">
+        <div className="row al-cen-between">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="i-size"
@@ -43,24 +30,35 @@ function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          {/* reminder */}
-          <button onClick={() => hasReminder(item.id)} className="img-size">
-            <img src={alarmIcon} alt="alarm" />
-          </button>
-          {/* priority */}
-          <button onClick={() => priority(item.id)} className="img-size">
-            <img src={flagIcon} alt="flag" />
-          </button>
-          {/* edit */}
-          <button className="img-size">
-            <img src={editIcon} alt="edit" />
-          </button>
-          {/* delete */}
-          <button onClick={() => deleteItem(item.id)} className="img-size">
-            <img src={deleteIcon} alt="deleteIcon" />
-          </button>
+          <span
+            className="title"
+            style={{
+              textDecoration: item.completed && "line-through",
+            }}
+          >
+            {item.title}
+          </span>
         </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="i-size popup-menu"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          onClick={() => setIconPopup(true)}
+        >
+          <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+        </svg>
+        {/* <span className="reminder text-info">{item.reminder}</span> */}
       </div>
+      <MenuItemPopup
+          item={item}
+          deleteItem={deleteItem}
+          priority={priority}
+          hasReminder={hasReminder}
+          iconPopup={iconPopup}
+          setIconPopup={setIconPopup}
+        />
+    </div>
   );
 }
 

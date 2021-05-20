@@ -1,26 +1,26 @@
 // individual styling
 nav {
-    padding: 13px;
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    svg {
-      margin: 0 10px;
-    }
-    .input-div {
-      width: 52%;
-      align-items: center;
-    }
+  padding: 13px;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  svg {
+    margin: 0 10px;
+  }
+  .input-div {
+    width: 52%;
+    align-items: center;
+  }
 }
 
 //=============================
 //                     tasks ui
 //=============================
 ul {
-   width: 100%;
+  width: 100%;
   li {
-    padding:6px 8px;
+    padding: 6px 8px;
     margin: 15px 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 7px 1px #c6c6c659;
@@ -29,21 +29,33 @@ ul {
       padding-left: 12px;
       width: auto;
 
-      div{
+      div {
         padding: 6px 0;
       }
-      .reminder{
+      .reminder {
         background-color: #892be21e;
         color: blueviolet;
         padding: 3px 10px;
         border-radius: 10px;
         margin-top: 5px;
       }
-      .list-icon{
-        border-top: 1px solid #eee;
+      .list-icon {
+        display: none;
+        position: absolute;
+        top: -6px;
+        right: -9px;
+        background-color: #fff;
+        width: 130px;
+        height: auto;
+        z-index: 99;
+        padding: 10px;
+        cursor: auto;
+        .list-icon > div {
+          border-bottom: 1px solid #eee;
+        }
       }
     }
-    .list-item::after{
+    .list-item::after {
       content: "";
       position: absolute;
       top: 0;
@@ -56,25 +68,25 @@ ul {
     }
 
     // if priority set
-    .priority{
-      .reminder{
+    .priority {
+      .reminder {
         background-color: #ff606041;
         color: #f92525;
       }
     }
-    .priority::after{
+    .priority::after {
       background-color: #f92525;
     }
   }
   svg {
-   margin-right:6px;
- }
+    margin-right: 6px;
+  }
 }
 
 //=============================
 //               show modal btn
 //=============================
-.fab{
+.fab {
   background-color: $primaryColor;
   width: 55px;
   height: 55px;
@@ -84,7 +96,7 @@ ul {
   bottom: 30px;
   right: 20px;
   z-index: 9999;
-  svg{
+  svg {
     width: 32px;
   }
 }
@@ -92,7 +104,7 @@ ul {
 //=============================
 //                    modal btn
 //=============================
-.modal{
+.modal {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -106,7 +118,7 @@ ul {
 //=============================
 //            add tasks form ui
 //=============================
-form{
+form {
   position: relative;
   background-color: white;
   padding: 20px;
@@ -114,16 +126,16 @@ form{
   width: 80%;
   height: auto;
   margin-top: 20px;
-  .input-group{
+  .input-group {
     padding: 10px 0;
-    input{
-       background-color: rgba(227, 227, 227, 0.37);
-       color: $primaryBlack;
-       padding: 10px;
-       border-radius: 6px;
+    input {
+      background-color: rgba(227, 227, 227, 0.37);
+      color: $primaryBlack;
+      padding: 10px;
+      border-radius: 6px;
     }
   }
-  button{
+  button {
     background-color: blueviolet;
     padding: 10px;
     color: $primaryWhite;
@@ -132,13 +144,18 @@ form{
   }
 }
 
-
 //==============================
 //                responsiveness
 //==============================
-@media (min-width:768px){
-  ul,form{width: 50%;}
+@media (min-width: 768px) {
+  ul,
+  form {
+    width: 50%;
+  }
 }
-@media (min-width:1024px){
-  ul,form{width: 40%;}
+@media (min-width: 1024px) {
+  ul,
+  form {
+    width: 40%;
+  }
 }
