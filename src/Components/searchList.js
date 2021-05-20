@@ -5,8 +5,9 @@ import flagIcon from "../assets/img/flagIcon.png";
 import alarmIcon from "../assets/img/alarmIcon.png";
 import deleteIcon from "../assets/img/deleteIcon.png";
 
-function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
+function SearchList({item, completedItem, deleteItem, priority, hasReminder}) {
   const context = useContext(AppContext);
+
   return (
       <div
         className={`${
@@ -44,11 +45,17 @@ function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
             />
           </svg>
           {/* reminder */}
-          <button onClick={() => hasReminder(item.id)} className="img-size">
+          <button
+            onClick={() => hasReminder(item.id)}
+            className="img-size"
+          >
             <img src={alarmIcon} alt="alarm" />
           </button>
           {/* priority */}
-          <button onClick={() => priority(item.id)} className="img-size">
+          <button
+            onClick={() => priority(item.id)}
+            className="img-size"
+          >
             <img src={flagIcon} alt="flag" />
           </button>
           {/* edit */}
@@ -56,7 +63,10 @@ function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
             <img src={editIcon} alt="edit" />
           </button>
           {/* delete */}
-          <button onClick={() => deleteItem(item.id)} className="img-size">
+          <button
+            onClick={() => deleteItem(item.id)}
+            className="img-size"
+          >
             <img src={deleteIcon} alt="deleteIcon" />
           </button>
         </div>
@@ -64,4 +74,4 @@ function TodoList({item, completedItem, deleteItem, priority, hasReminder}) {
   );
 }
 
-export default TodoList;
+export default SearchList;

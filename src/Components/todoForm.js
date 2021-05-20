@@ -13,8 +13,8 @@ function TodoForm() {
     reminder: "",
   });
   useEffect(() => {
-    setTask()
-  })
+    // setTask()
+  });
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task.title !== "") {
@@ -37,22 +37,22 @@ function TodoForm() {
         <div className="modal row al-jus-cen fh fw">
           <form onSubmit={handleSubmit} className="col al-jus-cen text">
             {/* <!-- close form btn --> */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="close-btn"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                onClick={() => ContextShowForm.setShowForm(false)}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={1}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-              
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="close-btn"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              onClick={() => ContextShowForm.setShowForm(false)}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={1}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+
             <p className="big-text">Add Task</p>
             <div className="col fw">
               <div className="row input-group">
@@ -60,7 +60,7 @@ function TodoForm() {
                   type="text"
                   placeholder="add task"
                   onChange={(e) => setTask({ ...task, title: e.target.value })}
-                  // value={task.title}
+                  value={task.title}
                 />
               </div>
               <div className="row input-group al-jus-cen">
@@ -69,7 +69,7 @@ function TodoForm() {
                   onChange={(e) =>
                     setTask({ ...task, reminder: e.target.value })
                   }
-                  // value={task.reminder}
+                  value={task.reminder}
                 />
               </div>
 

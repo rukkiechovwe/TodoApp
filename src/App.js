@@ -10,7 +10,6 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [result, setResult] = useState([]);
 
-  // const pluckTask = 
 
   const addItem = (item) => {
     const newTask = [...tasks, item];
@@ -23,17 +22,6 @@ function App() {
     setTasks(newTasks);
     window.localStorage.setItem("tasks", JSON.stringify(newTasks));
   };
-
-  // const editItem = (item) => {
-  //   const newTasks = tasks.map((task) => {
-  //     if (task.id === item.id) {
-  //       return { ...task, ...item };
-  //     }
-  //     return task;
-  //   });
-  //   setTasks(newTasks);
-  //   window.localStorage.setItem("tasks", JSON.stringify(newTasks));
-  // };
 
   const completedItem = (id) => {
     const newTasks = tasks.map((task) => {
@@ -78,10 +66,10 @@ function App() {
     <AppContext.Provider
       value={{
         tasks: tasks,
+        setTasks:setTasks,
         addItem: addItem,
         deleteItem: deleteItem,
         completedItem: completedItem,
-        // editItem: editItem,
         hasReminder: hasReminder,
         priority: priority,
       }}

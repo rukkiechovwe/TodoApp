@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { ShowFormContext } from "../context/modalContext";
+import DnD from "./dnd";
 import Fab from "./fab";
 import TodoForm from "./todoForm";
-import TodoList from "./todoList";
 
 function AddTodo() {
   const context = useContext(AppContext);
@@ -22,7 +22,7 @@ function AddTodo() {
       )}
 
       {/* tasks list */}
-      <TodoList />
+      <DnD />
     </div>
   );
 }

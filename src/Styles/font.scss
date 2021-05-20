@@ -1,32 +1,23 @@
-@font-face{
-   src: url('../assets/FacitRegular/FacitRegular.otf');
-   font-family: 'FacitRegular'
- }
- @font-face{
-   src: url('../assets/Inter-Medium.ttf');
-   font-family: 'Inter-Medium' 
- }
-body{
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap");
+body {
+  font-family: "Comfortaa", cursive;
+  font-weight: 400;
+}
+.text {
+  font-size: 0.9em;
+}
+.text-info {
+  font-size:0.8rem;
+}
+.title {
    font: {
-      // family:"Inter-Medium";
-      family: 'Inter-Medium';
-   }
-}
-.text{
-   font-size: 0.9em;
-}
-.text-info{
-   font: {
-      size: 0.8rem;
-      family: 'FacitRegular'
-   }
-}
-.title{
-   font-size:1.1rem;
-}
-.big-text{
-   font: {
-      size:1.3rem;
+      size: 1.1rem;
       weight: 500;
-   }
+    }
+}
+.big-text {
+  font: {
+    size: 1.3rem;
+    weight: 600;
+  }
 }
