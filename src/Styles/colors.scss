@@ -1,4 +1,24 @@
-$primaryColor :blueviolet;
+// $primaryColor :blueviolet;
 $primaryWhite :#ffffff;
-$primaryBgColor :#f7f7f7;
-$primaryBlack :rgb(39, 39, 39);
+// $primaryBgColor :#f7f7f7;
+// $primaryBlack :rgb(39, 39, 39);
+.theme-dark{
+   --dark-text: #F9F8F8;
+   --light-text: rgb(39, 39, 39);  
+   --dark-background: #202C37;
+   --dark-background: #0d1720;
+   // --light-background: #2B3945;
+   // --main-color: blueviolet;
+   --dark-background: #273542;
+   --light-background: #3D4B57;
+   --main-color: #2556cc;
+   --shadow:#04040459;
+}
+.theme-light{
+   --dark-text: rgb(39, 39, 39);
+   --light-text: #F9F8F8;
+   --dark-background: #f7f7f7;
+   --light-background: #ffffff;
+   --main-color: #2556cc;
+   --shadow:#c6c6c659;
+}

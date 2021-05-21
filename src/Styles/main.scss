@@ -11,6 +11,9 @@ nav {
   .input-div {
     width: 52%;
     align-items: center;
+    .input-div > input::placeholder,.input-div > input{
+      color: $primaryWhite;
+    }
   }
 }
 
@@ -23,7 +26,7 @@ ul {
     padding: 6px 8px;
     margin: 15px 10px;
     border-radius: 10px;
-    box-shadow: 0px 0px 7px 1px #c6c6c659;
+    box-shadow: 0px 0px 7px 1px var(--shadow);
     .list-item {
       position: relative;
       padding-left: 12px;
@@ -34,7 +37,7 @@ ul {
       }
       .reminder {
         background-color: #892be21e;
-        color: blueviolet;
+        color: var(--main-color);
         padding: 3px 10px;
         border-radius: 10px;
         margin-top: 5px;
@@ -44,7 +47,7 @@ ul {
         position: absolute;
         top: -6px;
         right: -9px;
-        background-color: #fff;
+        background-color: var(--light-background);
         width: 130px;
         height: auto;
         z-index: 99;
@@ -62,7 +65,7 @@ ul {
       left: 0;
       width: 5px;
       height: 100%;
-      background-color: blueviolet;
+      background-color: var(--main-color);
       border-radius: 15px;
       display: block;
     }
@@ -87,7 +90,7 @@ ul {
 //               show modal btn
 //=============================
 .fab {
-  background-color: $primaryColor;
+  background-color: var(--main-color);
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -120,7 +123,7 @@ ul {
 //=============================
 form {
   position: relative;
-  background-color: white;
+  background-color: var(--light-background);
   padding: 20px;
   border-radius: 10px;
   width: 80%;
@@ -129,14 +132,15 @@ form {
   .input-group {
     padding: 10px 0;
     input {
-      background-color: rgba(227, 227, 227, 0.37);
-      color: $primaryBlack;
+      // background-color: rgba(227, 227, 227, 0.37);
+      background-color: rgba(189, 189, 189, 0.37);
+      color: var(--primaryBlack);
       padding: 10px;
       border-radius: 6px;
     }
   }
   button {
-    background-color: blueviolet;
+    background-color: var(--main-color);
     padding: 10px;
     color: $primaryWhite;
     border-radius: 6px;

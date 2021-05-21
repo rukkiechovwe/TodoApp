@@ -14,7 +14,7 @@ function Search() {
   }, [search]);
   return (
       <input
-        className="fw"
+        className="fw color-web"
         placeholder="search tasks"
         onChange={(e) => setSearch(e.target.value)}
       />

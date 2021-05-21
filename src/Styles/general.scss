@@ -7,16 +7,20 @@ li{
    list-style: none;
 }
 .color-web{
-   background-color: $primaryColor;
+   background-color: var(--main-color);
    color: $primaryWhite;
 }
 .color-bg{
-   background-color: $primaryBgColor;
-   color: $primaryBlack;
+   background-color: var(--dark-background);
+   color: var(--dark-text);
 }
 .color-list{
-   background-color: $primaryWhite;
-   color: $primaryBlack;
+   background-color: var(--light-background);
+   color: var(--dark-text);
+}
+.color-list{
+   background-color: var(--light-background);
+   color: var(--dark-text);
 }
 .row{
    display: flex;
@@ -45,7 +49,7 @@ li{
 }
 input{
    background-color: transparent;
-   color: $primaryWhite;
+   color: var(--light-background);
    border: none;
    font-family: inherit;
    font-size: inherit;

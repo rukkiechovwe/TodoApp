@@ -3,12 +3,17 @@ import "./App.scss";
 import AddTodo from "./Components/todoBody";
 import Nav from "./Components/nav";
 import ShowFormContextProvider from "./context/modalContext";
+import { KeepTheme } from "./Components/themes";
 
 export const AppContext = React.createContext();
 export const SearchContext = React.createContext();
 function App() {
   const [tasks, setTasks] = useState([]);
   const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    KeepTheme();
+})
 
 
   const addItem = (item) => {
