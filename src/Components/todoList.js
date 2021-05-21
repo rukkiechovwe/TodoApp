@@ -1,9 +1,7 @@
-import React, { useContext, useState } from "react";
-import { AppContext } from "../App";
+import React, { useState } from "react";
 import MenuItemPopup from "./menuItemPopup";
 
 function TodoList({ item, completedItem, deleteItem, priority, hasReminder }) {
-  const context = useContext(AppContext);
   const [iconPopup, setIconPopup] = useState(false);
   return (
     <div

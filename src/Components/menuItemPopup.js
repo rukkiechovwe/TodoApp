@@ -19,7 +19,8 @@ function MenuItemPopup({
       style={{
         display: iconPopup && "flex",
       }}
-      onMouseLeave={() => setIconPopup(false)}
+      // onMouseLeave={() => setIconPopup(false)}
+      onMouseOut={() => setIconPopup(false)}
     >
       <MenuItem
         icon={alarmIcon}

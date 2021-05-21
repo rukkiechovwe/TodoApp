@@ -45,21 +45,11 @@ function Nav() {
       </div>
 
       <div>
-        {/* theme icon */}
-        {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="i-size"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              onClick={handleOnClick}
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg> */}
         <div className="container--toggle">
           {togClass === "light" ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="i-size"
+              className="theme-icon"
               viewBox="0 0 20 20"
               fill="currentColor"
               onClick={handleOnClick}
@@ -69,7 +59,7 @@ function Nav() {
           ) : (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="theme-icon"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
