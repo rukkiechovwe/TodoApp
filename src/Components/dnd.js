@@ -26,6 +26,7 @@ function DnD() {
     newItems.splice(result.destination.index, 0, draggedItem);
     // update state
     context.setTasks(newItems);
+    window.localStorage.setItem("tasks", JSON.stringify(newItems));
   };
 
   return (

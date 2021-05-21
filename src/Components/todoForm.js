@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import { ShowFormContext } from "../context/modalContext";
 
@@ -11,9 +11,6 @@ function TodoForm() {
     priority: false,
     hasReminder: false,
     reminder: "",
-  });
-  useEffect(() => {
-    // setTask()
   });
   const handleSubmit = (e) => {
     e.preventDefault();
