@@ -15,13 +15,13 @@ function TodoList({ item }) {
     >
       <div className="row al-cen-between fw">
         <div className="row al-cen-between">
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             className="i-size"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            onClick={() => context.completedItem(item.id)}
+            
           >
             <path
               strokeLinecap="round"
@@ -29,7 +29,8 @@ function TodoList({ item }) {
               strokeWidth={2}
               d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
             />
-          </svg>
+          </svg> */}
+          <input type="checkbox" onClick={() => context.completedItem(item.id)}/>
           <span
             className="title"
             style={{
