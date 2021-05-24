@@ -5,13 +5,23 @@ nav {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 99;
   svg {
     margin: 0 10px;
   }
   .input-div {
     width: 52%;
     align-items: center;
-    .input-div > input::placeholder,.input-div > input{
+    input {
+      color: $primaryWhite;
+    }
+    input::placeholder {
+      color: $primaryWhite;
+    }
+    input::-webkit-input-placeholder {
+      color: $primaryWhite;
+    }
+    input::-moz-placeholder {
       color: $primaryWhite;
     }
   }
@@ -98,7 +108,7 @@ ul {
   position: fixed;
   bottom: 30px;
   right: 20px;
-  z-index: 9999;
+  z-index: 1;
   svg {
     width: 32px;
   }
@@ -115,7 +125,7 @@ ul {
   z-index: 99;
   // visibility: hidden;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.404);
+  background-color: rgba(0, 0, 0, 0.56);
 }
 
 //=============================

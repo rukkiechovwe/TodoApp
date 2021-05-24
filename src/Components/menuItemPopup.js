@@ -1,33 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../Context/appContext";
 
 import editIcon from "../assets/img/editIcon.png";
 import flagIcon from "../assets/img/flagIcon.png";
 import alarmIcon from "../assets/img/alarmIcon.png";
 import deleteIcon from "../assets/img/deleteIcon.png";
+import { ShowFormContext } from "../Context/modalContext";
 
-function MenuItemPopup({
-  item,
-  hasReminder,
-  priority,
-  deleteItem,
-  iconPopup,
-  setIconPopup,
-}) {
+function MenuItemPopup({ itemId, iconPopup, setIconPopup }) {
+  const context = useContext(AppContext);
+
+  const formContext = useContext(ShowFormContext);
   return (
     <div
       className="list-icon col al-start fw"
       style={{
         display: iconPopup && "flex",
       }}
-      // onMouseLeave={() => setIconPopup(false)}
-      onMouseOut={() => setIconPopup(false)}
+      onMouseLeave={() => setIconPopup(false)}
     >
       <MenuItem
         icon={alarmIcon}
         label="Set Reminder"
         onClick={() => {
           setIconPopup(false);
-          hasReminder(item.id);
+          context.hasReminder(itemId);
         }}
       />
       <MenuItem
@@ -35,16 +32,24 @@ function MenuItemPopup({
         label="Set Priority"
         onClick={() => {
           setIconPopup(false);
-          priority(item.id);
+          context.priority(itemId);
         }}
       />
-      <MenuItem icon={editIcon} label="Edit" />
+      <MenuItem
+        icon={editIcon}
+        label="Edit"
+        onClick={() => {
+          setIconPopup(false);
+          context.setCurTask(context.tasks.find((task) => task.id === itemId));
+          formContext.setShowForm(2);
+        }}
+      />
       <MenuItem
         icon={deleteIcon}
         label="Delete"
         onClick={() => {
           setIconPopup(false);
-          deleteItem(item.id);
+          context.deleteItem(itemId);
         }}
       />
     </div>

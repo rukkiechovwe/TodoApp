@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./search";
-import { SetTheme } from "./themes";
+import { SetTheme } from "../Utils/theme";
 
 function Nav() {
   const [togClass, setTogClass] = useState("dark");

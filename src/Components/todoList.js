@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { AppContext } from "../Context/appContext";
 import MenuItemPopup from "./menuItemPopup";
 
-function TodoList({ item, completedItem, deleteItem, priority, hasReminder }) {
+function TodoList({ item }) {
+  const context = useContext(AppContext);
   const [iconPopup, setIconPopup] = useState(false);
   return (
     <div
@@ -19,7 +21,7 @@ function TodoList({ item, completedItem, deleteItem, priority, hasReminder }) {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            onClick={() => completedItem(item.id)}
+            onClick={() => context.completedItem(item.id)}
           >
             <path
               strokeLinecap="round"
@@ -49,13 +51,10 @@ function TodoList({ item, completedItem, deleteItem, priority, hasReminder }) {
         {/* <span className="reminder text-info">{item.reminder}</span> */}
       </div>
       <MenuItemPopup
-          item={item}
-          deleteItem={deleteItem}
-          priority={priority}
-          hasReminder={hasReminder}
-          iconPopup={iconPopup}
-          setIconPopup={setIconPopup}
-        />
+        itemId={item.id}
+        iconPopup={iconPopup}
+        setIconPopup={setIconPopup}
+      />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { AppContext, SearchContext } from "../App";
+import { AppContext } from "../Context/appContext";
+import { SearchContext } from "../Context/searchContext";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TodoList from "../Components/todoList";
 import SearchList from "./searchList";
@@ -50,13 +51,7 @@ function DnD() {
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
                       >
-                        <TodoList
-                          hasReminder={context.hasReminder}
-                          deleteItem={context.deleteItem}
-                          completedItem={context.completedItem}
-                          priority={context.priority}
-                          item={item}
-                        />
+                        <TodoList item={item} />
                       </li>
                     )}
                   </Draggable>
@@ -71,13 +66,7 @@ function DnD() {
                         {...provided.dragHandleProps}
                         className="color-list"
                       >
-                        <SearchList
-                          hasReminder={context.hasReminder}
-                          deleteItem={context.deleteItem}
-                          completedItem={context.completedItem}
-                          priority={context.priority}
-                          item={item}
-                        />
+                        <SearchList item={item} />
                       </li>
                     )}
                   </Draggable>

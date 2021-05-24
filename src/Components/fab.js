@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function Fab({onClick}) {
    return (
       <button onClick={onClick} className="fab row al-jus-cen">
